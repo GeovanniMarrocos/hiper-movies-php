@@ -57,6 +57,12 @@ header {
   box-shadow: none;
 }
 
+#search-form input::placeholder {
+  color: #ccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
 #search-form .btn {
   padding: 0px;
   position: relative;
@@ -86,10 +92,7 @@ header {
   display:flex;
   padding: 0px;
   gap: 10px;
-  font-size: 0.885rem;
-  font-weight: 400;
   text-transform: uppercase;
-  color: #fff;
   transition: 0.3ms;
   position: relative;
   border-bottom: 2px solid transparent;

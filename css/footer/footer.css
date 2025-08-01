@@ -42,5 +42,5 @@
 } 
 
 .social-menu .footer-link:hover::before{
-  width: 25.9%;
+  width: max-content;
 } 
