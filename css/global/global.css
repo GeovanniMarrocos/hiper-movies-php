@@ -1,0 +1,35 @@
+/* Global */
+
+body {
+  font-family: "Roboto", sans-serif;
+  max-width: 2000px;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+blockquote,
+p {
+  padding:0;
+  margin:0;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
