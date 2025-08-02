@@ -3,6 +3,11 @@
 @import url(home/home.css);
 @import url(footer/footer.css); 
 
+
+/* authentication */
+@import url(auth/auth.css);
+
+
 /* Colors  */
 @import url(utilities/colors.css);
 
