@@ -8,7 +8,7 @@ header {
 #main-navbar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: #121212;
+  background-color: var(--cor-11);
   justify-items: center;
 }
 
@@ -34,7 +34,7 @@ header {
 
 #search-form {
   align-content: center;
-  background-color: #fff;
+  background-color: var(--cor-0);
   border-radius: 20px;
   width: 60%;
 }
@@ -58,7 +58,7 @@ header {
 }
 
 #search-form input::placeholder {
-  color: #ccc;
+  color: var(--cor-3);
   font-size: 14px;
   opacity: 1;
 }
@@ -99,14 +99,14 @@ header {
 }
 
 .nav-item .nav-link:hover {
-  color: #c6c6c6;
+  color: var(--cor-4);
 }
 
 .nav-item .nav-link::before {
   content: "";
   width: 0px;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--cor-0);
   position: absolute;
   bottom: 0px;
   transition: 0.3s;
@@ -116,11 +116,37 @@ header {
   width: 100%;
 }
 
+/* Mensagem */
+
 .msg-container {
-  background-color:#000 ;
+  text-transform: uppercase;
+  width: 500px;
+  height: 100px;
+  display: flex;
+  background-color: var(--cor-12) ;
   padding: 15px;
+  justify-self: center; 
 }
 
 .msg {
-  color: #fff;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  color: var(--cor-0);
+  padding:10px;
+  border: solid 1px var(--cor-12);
+}
+
+.msg.error {
+  color: var(--cor-e1);
+  background-color: var(--cor-e2);
+  border-color: var(--cor-e3);
+  border-radius: 4px;
+}
+
+.msg.succes {
+  color: var(--cor-s1);
+  background-color: var(--cor-s2);
+  border-color: var(--cor-s3);
+  border-radius: 4px;
 }
