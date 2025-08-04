@@ -19,7 +19,7 @@
       </div>
       <div class="col-md-4" id="register-container">
         <h2>Criar Conta</h2>
-        <form action="" method="POST">
+        <form action="<?php $BASE_URL ?>auth_process.php" method="POST">
           <input type="hidden" name="type" value="register">
           <div class="form-group">
             <label for="email">E-mail:</label>
@@ -35,11 +35,11 @@
           </div>
           <div class="form-group">
             <label for="password">Senha:</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha">
           </div>
           <div class="form-group">
             <label for="confirmpassword">Confirmação de Senha:</label>
-            <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme sua senha" required>
+            <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme sua senha">
           </div>
           <input type="submit" class="btn card-btn" value="Registrar">
         </form>

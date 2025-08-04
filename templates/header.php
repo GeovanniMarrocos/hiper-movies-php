@@ -1,8 +1,21 @@
 <?php 
 require_once("globals.php");
 require_once("db.php");
+require_once("models/Message.php");
+require_once("auth_process.php");
 require_once("vendor/autoload.php");
-$flassMessage = [];
+include_once("alerts.php");
+
+$flassMessage = new Message($BASE_URL);
+
+$flassMessage = $message->getMessage();
+
+
+if(!empty($flassMessage["msg"]))
+{
+// Limpar a mensagem
+// $message->clearMessage();
+}
 
 ?>
 <!DOCTYPE html>
@@ -53,6 +66,7 @@ $flassMessage = [];
   </header>
   <?php if(!empty($flassMessage["msg"])):?>
   <div class="msg-container">
-    <p class="msg font-1-xs <?php $flassMessage["type"]?>"><?php $flassMessage["msg"]?></p>
+    <?php echo $alertsGet; ?>
+    <p class="msg font-1-xs cor-0 <?php echo $flassMessage["type"]?>"><?php echo $flassMessage["msg"]?></p>
   </div>
   <?php endif;?>
