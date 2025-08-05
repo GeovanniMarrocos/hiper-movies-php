@@ -1,4 +1,8 @@
-<?php 
+<?php
+ 
+error_reporting(0);
+ini_set('display_errors', 0);
+
 require_once("globals.php");
 require_once("db.php");
 require_once("models/Message.php");
@@ -13,8 +17,8 @@ $flassMessage = $message->getMessage();
 
 if(!empty($flassMessage["msg"]))
 {
-// Limpar a mensagem
-// $message->clearMessage();
+   // Limpa a mensagem da sessão
+   $message->clearMessage();
 }
 
 ?>

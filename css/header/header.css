@@ -119,24 +119,32 @@ header {
 /* Message */
 
 .msg-container {
-  text-transform: uppercase;
-  width: 500px;
-  height: 100px;
   display: flex;
-  color: #fff;
+  text-transform: uppercase;
+  width: 370px;
+  height: 100px;
+  color: var(--cor-0);
   background-color: var(--cor-12) ;
   padding: 15px;
+  justify-content: space-between;
   justify-self: center; 
 }
 
 .msg {
   text-align: center;
-  width: 60%;
   margin: 0 auto;
   color: var(--cor-0);
-  padding:10px;
+  padding:15px;
   border: solid 1px var(--cor-12);
   align-self: center;
+  justify-content: space-between;
+}
+
+.msg-container .fa-solid {
+  font-size: 30px;
+  color: var(--cor-e3);
+  align-self: center;
+
 }
 
 .msg.error {

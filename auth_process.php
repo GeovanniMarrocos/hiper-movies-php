@@ -8,6 +8,7 @@ require_once("db.php");
 require_once("vendor/autoload.php");
 
 $message = new Message($BASE_URL);
+$userDao = new UserDAO( $conn, $BASE_URL);
 
 // Resgata o tipo do formulário
 
@@ -25,18 +26,38 @@ if($type === "register")
 
   // Verificação de dados mínimos 
   if($name && $lastname && $email && $password) {
-    
-  }else {
+
+       if ($password === $confirmPassword)  {
+          
+            //  Verifica se o e-mail já está cadastrado no sistema
+           if($userDao->findByEmail($email) === false){
+                
+              $user = new User();
+
+              // Criação de token e senha 
+              $userToken = $user->generateToken();
+              $finalPassword->generatePassword($password);
+              
+           }
+           else {
+                  //Enviar uma msg de erro, usuário já existe
+                   $message->setMessage("Usuário já cadastrado, tente outro e-mail", "error", "back");  
+                }
+      } 
+      else {
+        
+            // Senhas não coincidem
+            $message->setMessage("As senhas não coincidem!", "error", "back");
+        
+          }
+  }
+  else  {
     // Enviar uma mensagem de erro, dados faltantes
    $message->setMessage("Por favor, preencha todos os campos.", "error", "back");
 
   }
-
-
-  
   
 }
-else if($type === "login")
-  {
-    
+else if($type === "login"){
+   
   }
