@@ -16,8 +16,7 @@ $type = filter_input(INPUT_POST, "type");
 
 // Verificação do tipo de formulário
 
-if($type === "register")
-{
+if($type === "register") {
   $email = filter_input(INPUT_POST, "email");
   $name = filter_input(INPUT_POST, "name");
   $lastname = filter_input(INPUT_POST, "lastname");
@@ -36,7 +35,17 @@ if($type === "register")
 
               // Criação de token e senha 
               $userToken = $user->generateToken();
-              $finalPassword->generatePassword($password);
+              $finalPassword = $user->generatePassword($password);
+
+              $user->name = $name;
+              $user->lastname = $lastname;
+              $user->email = $email;
+              $user->password = $finalPassword;
+              $user->token = $userToken;
+
+              $auth = true;
+              
+              $userDao->create($user, $auth);
               
            }
            else {
